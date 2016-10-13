@@ -16,6 +16,12 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/fonts" !default;
+$ionicons-font-path: "../assets/ionic/fonts" !default;
 // Include all of Ionic
-@import "../lib/ionic/scss/ionic";
+@import "../assets/ionic/scss/ionic";
+// Include all component styes, automatically done by gulp script
+
+/* inject:imports */
+
+
+/* endinject */
