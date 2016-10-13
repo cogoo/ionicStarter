@@ -1,0 +1,15 @@
+<!--
+Create navs with an icon and label, using the navs-positive style.
+Each nav's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <!-- Home -->
+    <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/nav/home">
+        <ion-nav-view name="nav-home"></ion-nav-view>
+    </ion-tab>
+    <!-- About-->
+    <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/nav/about">
+        <ion-nav-view name="nav-about"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>
