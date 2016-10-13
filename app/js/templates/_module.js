@@ -1,7 +1,6 @@
 'use strict';
 
-// var angular = require('angular');
-require('ionic');
+require('@ionic_bundle')
 
 // Load templates module
 angular.module('templates', []);

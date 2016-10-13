@@ -1,7 +1,6 @@
 'use strict';
 
-// var angular = require('angular');
-require('ionic')
+require('@ionic_bundle')
 var HomeComponent = require('./home.component');
 
 angular.module('app.Home', [])
@@ -18,7 +17,7 @@ function config($stateProvider) {
       url: '/home',
       views: {
         'nav-home': {
-          template: '<home></home>'
+          template: '<ion-view view-title="Dashboard"><home></home></ion-view>'
         }
       }
     });

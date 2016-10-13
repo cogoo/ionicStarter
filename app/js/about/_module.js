@@ -1,7 +1,6 @@
 'use strict';
 
-// var angular = require('angular');
-require('ionic')
+require('@ionic_bundle')
 var AboutComponent = require('./about.component');
 
 angular.module('app.About', [])
@@ -18,7 +17,7 @@ function config($stateProvider) {
       url: '/about',
       views: {
         'nav-about': {
-          template: '<about></about>'
+          template: '<ion-view view-title="About"><about></about></ion-view>'
         }
       }
     });

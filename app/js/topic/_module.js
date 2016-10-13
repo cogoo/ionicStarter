@@ -1,7 +1,7 @@
 'use strict';
 
-// var angular = require('angular');
-require('ionic')
+require('@ionic_bundle')
+
 var TopicComponent = require('./topic.component');
 
 angular.module('app.Topic', [])
@@ -18,7 +18,7 @@ function config($stateProvider) {
       url: '/topic',
       views: {
         'nav-home': {
-          template: '<topic></topic>'
+          template: '<ion-view view-title="Topic"><topic></topic></ion-view>'
         }
       }
     });

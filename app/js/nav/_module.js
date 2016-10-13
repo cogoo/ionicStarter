@@ -1,7 +1,6 @@
 'use strict';
 
-// var angular = require('angular');
-require('ionic')
+require('@ionic_bundle')
 var NavComponent = require('./nav.component');
 
 angular.module('app.Nav', [])

@@ -1,7 +1,7 @@
 // Ionic Starter App
 'use strict';
 // Ionic dependency
-require('ionic')
+require('@ionic_bundle')
 
 // lodash is my staple
 window._ = require('lodash');
