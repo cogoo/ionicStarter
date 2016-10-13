@@ -3,3 +3,4 @@ resources
 plugins
 hooks
 app/lib
+templates.js
