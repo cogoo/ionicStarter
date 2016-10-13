@@ -15,6 +15,7 @@ var gulpif = require('gulp-if');
 var runSequence = require('run-sequence');
 var templateCache = require('gulp-angular-templatecache');
 var template = require('gulp-template');
+var inject = require('gulp-inject');
 
 
 // Config
@@ -58,10 +59,6 @@ gulp.task('clean', ['clean:js', 'clean:css'], function() {
 
 gulp.task('copy:res', function() {
 
-  gulp.src(['./app/lib/**/*'], {
-    base: './app/lib/'
-  }).pipe(gulp.dest('./www/lib/'));
-
   gulp.src(['./app/manifest.json'])
     .pipe(gulp.dest('./www/'));
 
@@ -69,17 +66,30 @@ gulp.task('copy:res', function() {
     .pipe(gulp.dest('./www/'));
 
 
-  return gulp.src(['./app/img/**/*'], {
-    base: './app/img/'
-  }).pipe(gulp.dest('./www/img/'));
+  return gulp.src(['./app/assets/ionic/fonts/*'], {
+    base: './app/assets/'
+  }).pipe(gulp.dest('./www/assets/'));
 
 
 });
 
+
 gulp.task('compile:css', function() {
   // compiling the style
   return gulp.src('./app/scss/main.scss')
+    /**
+     * Dynamically injects @import statements into the main main.scss file, allowing
+     * .scss files to be placed around the app structure with the component
+     * or page they apply to.
+     */
     // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
+    .pipe(inject(gulp.src(['./app/js/**/*.scss']), {
+      starttag: '/* inject:imports */',
+      endtag: '/* endinject */',
+      transform: function(filepath) {
+        return '@import ".' + filepath + '";';
+      }
+    }))
     .pipe(sass({
       onError: function(e) {
         console.log(e);
