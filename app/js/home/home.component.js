@@ -6,12 +6,12 @@ module.exports = {
   controller: HomeController
 }
 
-HomeController.$inject = ['$state'];
+HomeController.$inject = ['$state', 'pushFactory'];
 
-function HomeController($state) {
+function HomeController($state, pushFactory) {
   var vm = angular.extend(this, {
     msg: 'this is the message',
-    changeState: changeState
+    sendPush: sendPush
   });
 
   return init();
@@ -23,7 +23,8 @@ function HomeController($state) {
     // init code here
   }
 
-  function changeState() {
-    $state.go('nav.topic');
+  function sendPush() {
+    pushFactory
+      .sendAll()
   }
 }

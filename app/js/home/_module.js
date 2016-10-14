@@ -2,10 +2,12 @@
 
 require('@ionic_bundle')
 var HomeComponent = require('./home.component');
+var PushFactory = require('../factory/push.factory');
 
 angular.module('app.Home', [])
   .config(config)
   .component('home', HomeComponent)
+  .factory('pushFactory', PushFactory)
 
 config.$inject = [
   '$stateProvider'
