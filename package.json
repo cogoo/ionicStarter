@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/cogoo/ionicStarter#readme",
   "dependencies": {
+    "@ionic/cloud": "^0.11.0",
     "gulp-concat": "^2.2.0",
     "lodash": "^4.16.4"
   },
@@ -53,7 +54,8 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios", {
+    "ios",
+    {
       "platform": "ios",
       "version": "",
       "locator": "ios"
