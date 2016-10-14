@@ -6,9 +6,16 @@ module.exports = {
   controller: NavController
 }
 
-NavController.$inject = [];
+NavController.$inject = ['$scope'];
 
-function NavController() {
+function NavController($scope) {
+
+  $scope.$on('cloud:push:notification', function(event, data) {
+    var msg = data.message;
+    alert(msg.title + ': ' + msg.text);
+    console.log('Push!!')
+  });
+
   var vm = angular.extend(this, {
 
   });
@@ -20,5 +27,6 @@ function NavController() {
    */
   function init() {
     // init code here
+
   }
 }
